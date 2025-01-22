@@ -1,0 +1,374 @@
+
+const data = [
+  // 20 Anagram Questions (WORD)
+
+  {
+    _id: "665568f4ac3f6205c943a937",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "T", showInOption: true, isAnswer: true },
+      { text: "O", showInOption: true, isAnswer: true },
+      { text: "Y", showInOption: true, isAnswer: true }
+    ],
+    solution: "TOY",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a938",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "C", showInOption: true, isAnswer: true },
+      { text: "A", showInOption: true, isAnswer: true },
+      { text: "T", showInOption: true, isAnswer: true }
+    ],
+    solution: "CAT",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a939",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "B", showInOption: true, isAnswer: true },
+      { text: "O", showInOption: true, isAnswer: true },
+      { text: "Y", showInOption: true, isAnswer: true }
+    ],
+    solution: "BOY",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a940",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "S", showInOption: true, isAnswer: true },
+      { text: "U", showInOption: true, isAnswer: true },
+      { text: "N", showInOption: true, isAnswer: true }
+    ],
+    solution: "SUN",
+    title: "Rearrange the letters to form a word"
+  },{
+    _id: "665568f4ac3f6205c943a937",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "T", showInOption: true, isAnswer: true },
+      { text: "O", showInOption: true, isAnswer: true },
+      { text: "Y", showInOption: true, isAnswer: true }
+    ],
+    solution: "TOY",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a938",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "C", showInOption: true, isAnswer: true },
+      { text: "A", showInOption: true, isAnswer: true },
+      { text: "T", showInOption: true, isAnswer: true }
+    ],
+    solution: "CAT",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a939",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "B", showInOption: true, isAnswer: true },
+      { text: "O", showInOption: true, isAnswer: true },
+      { text: "Y", showInOption: true, isAnswer: true }
+    ],
+    solution: "BOY",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a940",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "S", showInOption: true, isAnswer: true },
+      { text: "U", showInOption: true, isAnswer: true },
+      { text: "N", showInOption: true, isAnswer: true }
+    ],
+    solution: "SUN",
+    title: "Rearrange the letters to form a word"
+  },{
+    _id: "665568f4ac3f6205c943a937",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "T", showInOption: true, isAnswer: true },
+      { text: "O", showInOption: true, isAnswer: true },
+      { text: "Y", showInOption: true, isAnswer: true }
+    ],
+    solution: "TOY",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a938",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "C", showInOption: true, isAnswer: true },
+      { text: "A", showInOption: true, isAnswer: true },
+      { text: "T", showInOption: true, isAnswer: true }
+    ],
+    solution: "CAT",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a939",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "B", showInOption: true, isAnswer: true },
+      { text: "O", showInOption: true, isAnswer: true },
+      { text: "Y", showInOption: true, isAnswer: true }
+    ],
+    solution: "BOY",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a940",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "S", showInOption: true, isAnswer: true },
+      { text: "U", showInOption: true, isAnswer: true },
+      { text: "N", showInOption: true, isAnswer: true }
+    ],
+    solution: "SUN",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a937",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "T", showInOption: true, isAnswer: true },
+      { text: "O", showInOption: true, isAnswer: true },
+      { text: "Y", showInOption: true, isAnswer: true }
+    ],
+    solution: "TOY",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a938",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "C", showInOption: true, isAnswer: true },
+      { text: "A", showInOption: true, isAnswer: true },
+      { text: "T", showInOption: true, isAnswer: true }
+    ],
+    solution: "CAT",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a939",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "B", showInOption: true, isAnswer: true },
+      { text: "O", showInOption: true, isAnswer: true },
+      { text: "Y", showInOption: true, isAnswer: true }
+    ],
+    solution: "BOY",
+    title: "Rearrange the letters to form a word"
+  },
+  {
+    _id: "665568f4ac3f6205c943a940",
+    type: "ANAGRAM",
+    anagramType: "WORD",
+    blocks: [
+      { text: "S", showInOption: true, isAnswer: true },
+      { text: "U", showInOption: true, isAnswer: true },
+      { text: "N", showInOption: true, isAnswer: true }
+    ],
+    solution: "SUN",
+    title: "Rearrange the letters to form a word"
+  },
+  // Continue for 16 more ANAGRAM questions...
+
+  // 20 Multiple-Choice Questions (MCQ)
+  {
+    _id: "6655b1c5d3d666003d3b1d83",
+    type: "MCQ",
+    options: [
+      { text: "under", isCorrectAnswer: true },
+      { text: "below", isCorrectAnswer: false },
+      { text: "above", isCorrectAnswer: false },
+      { text: "over", isCorrectAnswer: false }
+    ],
+    title: "In my previous job, I often had to complete tasks ______ tight deadlines."
+  },
+  {
+    _id: "6655b1c5d3d666003d3b1d84",
+    type: "MCQ",
+    options: [
+      { text: "in", isCorrectAnswer: true },
+      { text: "on", isCorrectAnswer: false },
+      { text: "over", isCorrectAnswer: false },
+      { text: "at", isCorrectAnswer: false }
+    ],
+    title: "I left my keys ______ the table."
+  },
+  {
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ never seen stuch a beautiful sunset before."
+  },
+  {
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ never seeen such a beautiful sunset before."
+  },
+  {
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ never seein such a beautiful sunset before."
+  },
+  {
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ never sern such a beautiful sunset before."
+  },
+  {
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ never seen suc5h a beautiful sunset before."
+  },
+  {
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ neveer seen such a beautiful sunset before."
+  },
+  {
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ never sehen such a beautiful sunset before."
+  },{
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ never seen such a beau5tiful sunset before."
+  },
+
+  {
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ nevehr seen such a beautiful sunset before."
+  },{
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ never seen such a bejautiful sunset before."
+  },
+  {
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ never s6een such a beautiful sunset before."
+  },
+  {
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ never seen such a beabutiful sunset before."
+  },{
+    _id: "6655b1c5d3d666003d3b1d85",
+    type: "MCQ",
+    options: [
+      { text: "has", isCorrectAnswer: false },
+      { text: "have", isCorrectAnswer: true },
+      { text: "is", isCorrectAnswer: false },
+      { text: "are", isCorrectAnswer: false }
+    ],
+    title: "I ______ never steen such a beautiful sunset before."
+  },
+
+  {
+    _id: "6655b1c5d3d666003d3b1d86",
+    type: "MCQ",
+    options: [
+      { text: "whose", isCorrectAnswer: true },
+      { text: "who's", isCorrectAnswer: false },
+      { text: "who", isCorrectAnswer: false },
+      { text: "whom", isCorrectAnswer: false }
+    ],
+    title: "Do you know the person ______ car is parked outside?"
+  },
+  // Continue for 16 more MCQ questions...
+];
