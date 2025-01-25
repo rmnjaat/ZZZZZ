@@ -20,7 +20,7 @@ function App() {
     const stream =await  client.pingPong(request);
 
     stream.on('data', (res) => {
-      setResponses(prev => [...prev, responses.toObject()])  
+      setResponses(prev => [...prev, res.toObject()])  
     });
 
   } catch(err) {
