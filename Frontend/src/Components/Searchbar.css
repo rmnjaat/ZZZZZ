@@ -1,0 +1,30 @@
+.searchbar-master{
+    margin:auto;
+    width: 60%;
+    max-width: 700px;
+}
+
+.searchbar-main{
+    display: flex;
+    
+    align-items: baseline;
+    gap:10px;
+    justify-content: center;
+    align-content: center;
+}
+
+
+@media screen and (max-width :400px) {
+
+    .searchbar-master{
+        margin:auto;
+        width: 90%;
+
+    }
+    .searchbar-main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
