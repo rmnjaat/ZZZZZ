@@ -1,0 +1,4 @@
+GET http://localhost:50051/ HTTP/1.1
+
+###
+curl http://localhost:50051/

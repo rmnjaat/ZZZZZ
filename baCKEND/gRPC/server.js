@@ -3,6 +3,7 @@ const grpc = require("@grpc/grpc-js");
 const protoLoader = require("@grpc/proto-loader");
 const fetchQuestions = require("./fetchQuestions");
 
+
 // Load Proto file and prepare gRPC definition
 const path = require("path");
 
@@ -20,6 +21,7 @@ const packageDefinition = protoLoader.loadSync(protoPath, {
 const questionsProto =
   grpc.loadPackageDefinition(packageDefinition).questions;
 
+
 // Ensure `questionsProto` contains `QuestionService`
 if (!questionsProto || !questionsProto.QuestionService) {
   console.error("Error: Failed to load QuestionService from the proto file.");
@@ -27,11 +29,30 @@ if (!questionsProto || !questionsProto.QuestionService) {
 }
 
 const startGrpcServer = (port = 50051) => {
+
   const grpcServer = new grpc.Server();
   grpcServer.addService(questionsProto.QuestionService.service, {
     FetchQuestions: fetchQuestions,
   });
-  
+
+
+  grpcServer.addService(questionsProto.PingPongService.service,{
+    pingPong:(call)=>{
+      let count=0 ; 
+      const interval = setInterval(()=>{
+        count++;
+        call.write({
+          message:`Pong #${count}!`
+        });
+
+        if(count>5){
+          clearInterval(interval);
+          call.end();
+        }
+      },5000);
+    }
+  })
+
   grpcServer.bindAsync(
     `0.0.0.0:${port}`,
     grpc.ServerCredentials.createInsecure(),
