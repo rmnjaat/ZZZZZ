@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const cors= require('cors');
-const fetchallQuestions = require('./Utility/FetchData')
+
 const startGrpcServer = require('./gRPC/server')
 
 
@@ -13,11 +13,6 @@ const PORT = process.env.PORT || 8081;
 const GRPC_PORT = process.env.GRPC_PORT || 50051;
 
 
-app.get('/ping',(req,res)=>{
-    res.send("PONG");
-})
-
-app.get('/questions' , fetchallQuestions);
 
 app.use(cors());
 

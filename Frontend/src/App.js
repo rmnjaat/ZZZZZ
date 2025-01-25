@@ -1,7 +1,7 @@
 import "./App.css";
-import { PingPongServiceClient } from "./gen/question_grpc_web_pb";
-import { PingRequest } from "./gen/question_pb";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import { fetchQuestionsService } from "./Services/fetchhQuestion";
 
 import Searchbar from "./Components/Searchbar";
 import Filter from "./Components/Filter";
@@ -9,38 +9,36 @@ import QuestionList from "./Components/QuestionList";
 import Paginationn from "./Components/Paginationn";
 
 function App() {
-  // Instantiate the client correctly
+  const [questions, setQuestions] = useState([]);
 
-  const [responses, setResponses] = useState([]);
-
-  const ping = async () => {
-    const client = new PingPongServiceClient("http://localhost:8080");
-    console.log("client is ", client);
-
-    try {
-      const request = new PingRequest(); // Using PingRequest from proto.questions
-      const stream = await client.pingPong(request);
-
-      stream.on("data", (res) => {
-        setResponses((prev) => [...prev, res.toObject()]);
-      });
-    } catch (err) {
-      console.error(err);
-    }
+  const fetchQuestions = () => {
+    fetchQuestionsService(
+      "MCQ",       // type
+      "i",         // title
+      1,           // page
+      10,          // limit
+      (questions) => setQuestions(questions),   // onSuccess
+      (error) => console.error("Error fetching questions:", error) // onError
+    );
   };
+
+  useEffect(() => {
+    fetchQuestions();
+  }, []);
 
   return (
     <div className="main-container">
       <div className="container">
-        <div className="heading">
-          <h2 >Search your question </h2>
+        <header className="heading">
+          <h2>Search your question</h2>
+        </header>
+        <Searchbar />
+        <Filter />
+        <div className="results-summary">
+          <span>Results for "Sample Query" filter "MCQ":</span>
         </div>
-        <Searchbar></Searchbar>
-        <Filter></Filter>
-        <div className="Span"><span>Results for "The " filter "MCQ" :</span></div>
-        <QuestionList></QuestionList>
-        <Paginationn></Paginationn>
-        
+        <QuestionList questions={questions} />
+        <Paginationn />
       </div>
     </div>
   );
