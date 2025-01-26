@@ -1,4 +1,4 @@
-// fetchQuestions.js
+
 const { buildFilter, formatQuestionResponse } = require('./helpers');
 const QuestionModel = require('../Utility/QuestionSchema');
 

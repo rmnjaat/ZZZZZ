@@ -37,27 +37,6 @@ const startGrpcServer = (port = 50051) => {
     FetchQuestions: fetchQuestions,
   });
 
-
-
-  grpcServer.addService(questionsProto.PingPongService.service,{
-    pingPong:(call)=>{
-      let count=0 ; 
-      const interval = setInterval(()=>{
-        count++;
-        call.write({
-          message:`Pong #${count}!`
-        });
-
-        if(count>5){
-          clearInterval(interval);
-          call.end();
-        }
-      },5000);
-    }
-  })
-
-  
-
   grpcServer.bindAsync(
     `0.0.0.0:${port}`,
     grpc.ServerCredentials.createInsecure(),

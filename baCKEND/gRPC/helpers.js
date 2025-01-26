@@ -1,6 +1,4 @@
 
-
-// Helper function to build the filter based on request parameters
 const buildFilter = ({ title, type, anagramType }) => {
   let filter = { title: { $regex: title, $options: "i" } };
 
