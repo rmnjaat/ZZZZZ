@@ -20,7 +20,7 @@ function App() {
   const [loading, setLoading] = useState(false); // Loading state
   const [filter, setFilter] = useState("");
 
-  const [pageLimit, setPageLimit] = useState(3);
+  const [pageLimit, setPageLimit] = useState(10);
 
   const fetchQuestions = (page, searchQuery, filter, pageLimit) => {
 
@@ -82,7 +82,7 @@ function App() {
         <Filter searchQuery={searchQuery} filter={filter} setFilter={setFilter} />
         <div className="results-summary">
           <span>Results for "{searchQuery}" filter "{filter}":</span>
-          <QuestionsPerPageDropdown options={[3, 5, 10, 15, 20]} handleQuesPerChange={handleQuesPerChange} ></QuestionsPerPageDropdown>
+          <QuestionsPerPageDropdown options={[10, 20,50]} handleQuesPerChange={handleQuesPerChange} ></QuestionsPerPageDropdown>
         </div>
         <QuestionList questionList={questionList} currPage={currPage} pageLimit={pageLimit} loading={loading} />
         <Paginationn
