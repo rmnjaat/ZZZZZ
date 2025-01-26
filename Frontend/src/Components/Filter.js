@@ -31,14 +31,9 @@ const names = [
 export default function Filter({ searchQuery, filter, setFilter }) {
 
   const handleChange = (event) => {
-    if (searchQuery == "") {
-      console.log("till toast");
-      // toast.warn("Please search something", {
-      //   position: "top-right"
-      // })
-    } else {
+   
       setFilter(event.target.value);
-    } // Update the state with the selected value
+   
   };
 
   return (

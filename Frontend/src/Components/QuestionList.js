@@ -18,9 +18,8 @@ const QuestionList = ({ currPage, questionList , pageLimit , loading }) => {
     }));
   };
 
-
   
-  if (!currPage || !questionList || loading) {
+  if (!currPage  || loading) {
     return (
       <>
         {[...Array(pageLimit)].map((_, index) => (
@@ -30,15 +29,16 @@ const QuestionList = ({ currPage, questionList , pageLimit , loading }) => {
     );
   }
 
-  
+  if (questionList.length === 0) {
+    return (
+      <Box sx={{ padding: 3, textAlign: "center", maxWidth: 700, margin: "0 auto" }}>
+        <Typography variant="h6" color="textSecondary">
+          No result found
+        </Typography>
+      </Box>
+    );
+  }
 
-  // if(questionList.length==0){
-  //   // console.log("Till Toast");
-  //   // toast.warn("No result Found" , {
-  //   //   position:"top-right"
-  //   // })
-  // }
-  
 
   const optionPrefix = ["a)", "b)", "c)", "d)", "e)", "f)"];
 

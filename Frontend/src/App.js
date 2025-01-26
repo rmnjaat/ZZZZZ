@@ -7,6 +7,7 @@ import Searchbar from "./Components/Searchbar";
 import Filter from "./Components/Filter";
 import QuestionList from "./Components/QuestionList";
 import Paginationn from "./Components/Paginationn";
+import { QuestionsPerPageDropdown } from "./Components/Paginatioon/QesPerPage";
 
 
 
@@ -19,9 +20,9 @@ function App() {
   const [loading, setLoading] = useState(false); // Loading state
   const [filter, setFilter] = useState("");
   
-  const pageLimit = 3
+  const [pageLimit,setPageLimit] = useState(3) ;
 
-  const fetchQuestions = (page, searchQuery, filter) => {
+  const fetchQuestions = (page, searchQuery, filter,pageLimit) => {
 
     
 
@@ -48,11 +49,10 @@ function App() {
 
   // Fetch questions when page number changes
   useEffect(() => {
-    if (searchQuery.trim() !== "") {
-      fetchQuestions(currPage, searchQuery, filter);
-    }
-    fetchQuestions(currPage, searchQuery, filter);
-  }, [currPage, searchQuery, filter]); // Dependency array ensures this runs on page change
+  
+      fetchQuestions(currPage, searchQuery, filter,pageLimit);
+    
+  }, [currPage, searchQuery, filter ,pageLimit]); // Dependency array ensures this runs on page change
 
   const handlePageChange = (event, value) => {
     setCurrPage(value); // Update current page
@@ -65,6 +65,10 @@ function App() {
       setSearchQuery(query);
     }
   };
+
+  const handleQuesPerChange=(number)=>{
+    setPageLimit(number); 
+  }
   
 
   return (
@@ -78,6 +82,7 @@ function App() {
         <Filter searchQuery={searchQuery} filter={filter} setFilter={setFilter} />
         <div className="results-summary">
           <span>Results for "{searchQuery}" filter "{filter}":</span>
+          <QuestionsPerPageDropdown options={[3,5,10,15,20]} handleQuesPerChange={handleQuesPerChange} ></QuestionsPerPageDropdown>
         </div>
         <QuestionList questionList={questionList} currPage={currPage} pageLimit={pageLimit} loading={loading} />
         <Paginationn

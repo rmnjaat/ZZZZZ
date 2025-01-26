@@ -6,9 +6,6 @@ const client = new QuestionServiceClient("http://localhost:8080");
 
 export const fetchQuestionsService = (type, title, page, limit, onSuccess, onError) => {
 
-  if (title === "") {
-    return;
-  }
 
   const request = new FetchQuestionsRequest();
   request.setTitle(title);
