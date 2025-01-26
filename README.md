@@ -88,3 +88,16 @@ This is an Envoy image built from my configuration use this , or you can build  
 
 [![Watch the video](https://img.youtube.com/vi/CWlwH8QMn4M/0.jpg)](https://www.youtube.com/watch?v=CWlwH8QMn4M)
 
+--
+
+## Screen Shots
+![image](https://github.com/user-attachments/assets/4aeb7b0b-cad6-4bd7-866f-557a91b30bc8)
+
+![image](https://github.com/user-attachments/assets/2136ea26-68ce-465f-b2ce-669dec14ec1b)
+
+![image](https://github.com/user-attachments/assets/c578c5ce-66ce-4715-89a0-2c041ecd1628)
+
+![image](https://github.com/user-attachments/assets/13d79658-af32-4d85-bb10-b6d85763ef2c)
+
+
+
