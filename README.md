@@ -82,7 +82,7 @@ This is an Envoy image built from my configuration use this , or you can build  
 
 ---
 
-## Watch the Video Demo
+
 
 ## Watch the Demo Video
 
