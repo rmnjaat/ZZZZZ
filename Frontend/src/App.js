@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 
 import { fetchQuestionsService } from "./Services/fetchhQuestion";
 
-import Searchbar from "./Components/Searchbar";
-import Filter from "./Components/Filter";
-import QuestionList from "./Components/QuestionList";
-import Paginationn from "./Components/Paginationn";
+import Searchbar from "./Components/Search/Searchbar";
+import Filter from "./Components/Search/Filter";
+import QuestionList from "./Components/QuestionnList/QuestionList";
+import Paginationn from "./Components/Paginatioon/Paginationn";
 import { QuestionsPerPageDropdown } from "./Components/Paginatioon/QesPerPage";
 
 
@@ -19,12 +19,12 @@ function App() {
   const [totalPage, setTotalPage] = useState(0); // For total pages
   const [loading, setLoading] = useState(false); // Loading state
   const [filter, setFilter] = useState("");
-  
-  const [pageLimit,setPageLimit] = useState(3) ;
 
-  const fetchQuestions = (page, searchQuery, filter,pageLimit) => {
+  const [pageLimit, setPageLimit] = useState(3);
 
-    
+  const fetchQuestions = (page, searchQuery, filter, pageLimit) => {
+
+
 
     // console.log(searchQuery);
     setLoading(true);
@@ -43,16 +43,16 @@ function App() {
         setQuestionList(questions);
       },             // onSuccess
       (error) => console.error("Error fetching questions:", error), // onError
-      // Anagram Subtype optional
+
     );
   };
 
   // Fetch questions when page number changes
   useEffect(() => {
-  
-      fetchQuestions(currPage, searchQuery, filter,pageLimit);
-    
-  }, [currPage, searchQuery, filter ,pageLimit]); // Dependency array ensures this runs on page change
+
+    fetchQuestions(currPage, searchQuery, filter, pageLimit);
+
+  }, [currPage, searchQuery, filter, pageLimit]); // Dependency array ensures this runs on page change
 
   const handlePageChange = (event, value) => {
     setCurrPage(value); // Update current page
@@ -66,10 +66,10 @@ function App() {
     }
   };
 
-  const handleQuesPerChange=(number)=>{
-    setPageLimit(number); 
+  const handleQuesPerChange = (number) => {
+    setPageLimit(number);
   }
-  
+
 
   return (
     <div className="main-container">
@@ -82,7 +82,7 @@ function App() {
         <Filter searchQuery={searchQuery} filter={filter} setFilter={setFilter} />
         <div className="results-summary">
           <span>Results for "{searchQuery}" filter "{filter}":</span>
-          <QuestionsPerPageDropdown options={[3,5,10,15,20]} handleQuesPerChange={handleQuesPerChange} ></QuestionsPerPageDropdown>
+          <QuestionsPerPageDropdown options={[3, 5, 10, 15, 20]} handleQuesPerChange={handleQuesPerChange} ></QuestionsPerPageDropdown>
         </div>
         <QuestionList questionList={questionList} currPage={currPage} pageLimit={pageLimit} loading={loading} />
         <Paginationn

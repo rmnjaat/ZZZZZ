@@ -12,7 +12,7 @@ export const fetchQuestionsService = (type, title, page, limit, onSuccess, onErr
   request.setPage(page);
   request.setLimit(limit);
 
-
+  //setting type and if type is anagram setting further subtypes
   if (type) {
     switch (type) {
       case "Select All":
@@ -49,11 +49,6 @@ export const fetchQuestionsService = (type, title, page, limit, onSuccess, onErr
       //do nothing
     }
   }
-
-
-
-
-
 
   client.fetchQuestions(request, {}, (error, response) => {
     if (error) {

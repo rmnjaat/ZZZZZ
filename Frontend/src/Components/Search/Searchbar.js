@@ -18,7 +18,7 @@ function Searchbar({ onSearchSubmit }) {
       })
        // Notify App.js if the search is empty
     } else {
-      onSearchSubmit(searchValue); // Notify App.js with the search value
+      onSearchSubmit(searchValue); // Notify App.js With the search value
     }
   };
 
@@ -30,12 +30,12 @@ function Searchbar({ onSearchSubmit }) {
           fullWidth
           label="Type here"
           id=""
-          variant="outlined" // or "filled" or "standard"
+          variant="outlined" 
           margin="normal"
           onChange={handleInputChange}
         />
         <Button
-          variant="contained" //outlined
+          variant="contained" 
           size="large"
           sx={{
             height: "53px",
