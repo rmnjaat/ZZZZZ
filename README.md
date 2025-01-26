@@ -50,6 +50,10 @@ Envoy is used in this project as a reverse proxy to enable gRPC-Web communicatio
 ### Using Docker
 
 This is an Envoy image built from my configuration use this , or you can build  using `docker file` .
+ > IF you are building docker image changes in cluster section  in envoy.yaml
+    `address: host.docker.internal`
+    `port_value: 50050`
+
 1. Pull the Docker image:
    ```bash
    docker pull rmnjaat/envoyimage
@@ -67,9 +71,7 @@ This is an Envoy image built from my configuration use this , or you can build  
 ### Or if you have Envoy Locally Installed
 1. Make sure Envoy is installed locally:
 
-   > Make sure following changes in cluster section  in envoy.yaml
-    `address: 127.0.0.1`
-    `port_value: 50051`
+  
                       
     ```bash
     envoy -c envoy.yaml
@@ -86,7 +88,7 @@ This is an Envoy image built from my configuration use this , or you can build  
 
 ## Watch the Demo Video
 
-[![Watch the video](https://img.youtube.com/vi/CWlwH8QMn4M/0.jpg)](https://www.youtube.com/watch?v=CWlwH8QMn4M)
+[![Watch the video](https://img.youtube.com/vi/WhYviroDoU4/0.jpg)](https://www.youtube.com/watch?v=WhYviroDoU4)
 
 --
 
