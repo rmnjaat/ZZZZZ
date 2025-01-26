@@ -21,7 +21,6 @@ const fetchQuestions = async (call, callback) => {
 
     // Format questions and send the response
     const questionsResponse = questions.map(formatQuestionResponse);
-
     callback(null, {
       currentPage: pageNumber,
       totalPages: totalPages,

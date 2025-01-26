@@ -4,11 +4,18 @@ import Pagination from "@mui/material/Pagination";
 import "./Paginationn.css"
 
 
-export default function Paginationn() {
+export default function Paginationn({ totalPage, currPage, onPageChange }) {
+ 
+
+  if(!totalPage){
+   return (<></>);
+  }
   return (
     <div className="pagination-master">
       <Pagination
-        count={10}
+        count={totalPage}
+        page={currPage} // Controlled page state
+        onChange={onPageChange} // Update current page when clicked
         shape="rounded"
         sx={{
           "& .MuiPaginationItem-root": {

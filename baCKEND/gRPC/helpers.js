@@ -15,7 +15,7 @@ const formatQuestionResponse = (question) => {
   const options = question.options.map((opt) => ({
     _id: opt._id,
     text: opt.text,
-    isCorrectAnswer: opt.isCorrectAnswer,
+    isCorrectAnswere: opt.isCorrectAnswer,
   }));
 
   const blocks = question.blocks.map((block) => ({

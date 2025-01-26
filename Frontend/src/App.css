@@ -25,7 +25,7 @@
 }
 
 
-.Span{
+.results-summary{
   display: block;
   max-width: 700px;
   margin: auto;
@@ -45,7 +45,7 @@
   .heading h2{
     font-weight: 500;
   }
-  .Span{
+  .results-summary{
     margin-left:10px;
   }
 }

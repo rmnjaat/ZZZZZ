@@ -8,23 +8,64 @@ import Filter from "./Components/Filter";
 import QuestionList from "./Components/QuestionList";
 import Paginationn from "./Components/Paginationn";
 
-function App() {
-  const [questions, setQuestions] = useState([]);
 
-  const fetchQuestions = () => {
+
+function App() {
+  const [response, setResponse] = useState([]);
+  const [currPage, setCurrPage] = useState(1); // State for the current page
+  const [questionList, setQuestionList] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [totalPage, setTotalPage] = useState(0); // For total pages
+  const [loading, setLoading] = useState(false); // Loading state
+  const [filter, setFilter] = useState("");
+  
+  const pageLimit = 3
+
+  const fetchQuestions = (page, searchQuery, filter) => {
+
+    
+
+    // console.log(searchQuery);
+    setLoading(true);
+
+
     fetchQuestionsService(
-      "MCQ",       // type
-      "i",         // title
-      1,           // page
-      10,          // limit
-      (questions) => setQuestions(questions),   // onSuccess
-      (error) => console.error("Error fetching questions:", error) // onError
+      filter,        // type
+      searchQuery,  // title
+      page,         // page
+      pageLimit,            // limit
+      (response) => {
+        setLoading(false);
+        setResponse(response);
+        const [_, totalPage, questions] = response; // Destructuring the response
+        setTotalPage(totalPage);
+        setQuestionList(questions);
+      },             // onSuccess
+      (error) => console.error("Error fetching questions:", error), // onError
+      // Anagram Subtype optional
     );
   };
 
+  // Fetch questions when page number changes
   useEffect(() => {
-    fetchQuestions();
-  }, []);
+    if (searchQuery.trim() !== "") {
+      fetchQuestions(currPage, searchQuery, filter);
+    }
+    fetchQuestions(currPage, searchQuery, filter);
+  }, [currPage, searchQuery, filter]); // Dependency array ensures this runs on page change
+
+  const handlePageChange = (event, value) => {
+    setCurrPage(value); // Update current page
+  };
+
+
+  const handleSearchSubmit = (query) => {
+    if (query) {
+      setFilter("");
+      setSearchQuery(query);
+    }
+  };
+  
 
   return (
     <div className="main-container">
@@ -32,13 +73,18 @@ function App() {
         <header className="heading">
           <h2>Search your question</h2>
         </header>
-        <Searchbar />
-        <Filter />
+        <Searchbar
+          onSearchSubmit={handleSearchSubmit} />
+        <Filter searchQuery={searchQuery} filter={filter} setFilter={setFilter} />
         <div className="results-summary">
-          <span>Results for "Sample Query" filter "MCQ":</span>
+          <span>Results for "{searchQuery}" filter "{filter}":</span>
         </div>
-        <QuestionList questions={questions} />
-        <Paginationn />
+        <QuestionList questionList={questionList} currPage={currPage} pageLimit={pageLimit} loading={loading} />
+        <Paginationn
+          totalPage={totalPage}
+          currPage={currPage}
+          onPageChange={handlePageChange}
+        />
       </div>
     </div>
   );

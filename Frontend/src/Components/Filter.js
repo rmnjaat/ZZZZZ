@@ -3,9 +3,8 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
-import Checkbox from "@mui/material/Checkbox";
+import { ToastContainer, toast } from "react-toastify";
 import "./Filter.css";
 
 const ITEM_HEIGHT = 40;
@@ -20,6 +19,7 @@ const MenuProps = {
 };
 
 const names = [
+  "Select All",
   "MCQ",
   "Word Anagram",
   "Sentence Anagram",
@@ -28,42 +28,41 @@ const names = [
   "Content only",
 ];
 
-export default function Filter() {
-  const [selectedNames, setSelectedNames] = useState([]);
+export default function Filter({ searchQuery, filter, setFilter }) {
 
   const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setSelectedNames(typeof value === "string" ? value.split(",") : value);
+    if (searchQuery == "") {
+      console.log("till toast");
+      // toast.warn("Please search something", {
+      //   position: "top-right"
+      // })
+    } else {
+      setFilter(event.target.value);
+    } // Update the state with the selected value
   };
 
   return (
-    <>
     <div className="filter-master">
-        <h2>Filters :</h2>
+      <h2>Filters :</h2>
       <FormControl sx={{ m: 1, width: 250 }}>
-        <InputLabel id="checkbox-selector-label">Select</InputLabel>
+        <InputLabel id="single-selector-label">Select</InputLabel>
         <Select
-          labelId="checkbox-selector-label"
-          id="checkbox-selector"
-          multiple
-          value={selectedNames}
+          labelId="single-selector-label"
+          id="single-selector"
+          value={filter}
           onChange={handleChange}
-          input={<OutlinedInput label="select"  />}
-          renderValue={(selected) => selected.join(", ")}
+          input={<OutlinedInput label="Select" />}
           MenuProps={MenuProps}
         >
           {names.map((name) => (
             <MenuItem key={name} value={name}>
-              <Checkbox checked={selectedNames.includes(name)} />
-              <ListItemText primary={name} />
+              {name}
             </MenuItem>
           ))}
         </Select>
       </FormControl>
-      
-      </div>
-    </>
+
+      <ToastContainer />
+    </div>
   );
 }

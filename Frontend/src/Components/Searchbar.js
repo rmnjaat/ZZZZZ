@@ -1,10 +1,28 @@
-import React from "react";
-import Box from "@mui/material/Box";
+import React, { useState } from "react";
+import { ToastContainer , toast } from "react-toastify";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import "./Searchbar.css";
 
-function Searchbar() {
+function Searchbar({ onSearchSubmit }) {
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleInputChange = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const handleSearchClick = () => {
+    if (searchValue.trim() === "") {
+      toast.warn("Enter Something to search" , {
+        position:'top-right'
+      })
+       // Notify App.js if the search is empty
+    } else {
+      onSearchSubmit(searchValue); // Notify App.js with the search value
+    }
+  };
+
+
   return (
     <div className="searchbar-master">
       <div className="searchbar-main">
@@ -14,6 +32,7 @@ function Searchbar() {
           id=""
           variant="outlined" // or "filled" or "standard"
           margin="normal"
+          onChange={handleInputChange}
         />
         <Button
           variant="contained" //outlined
@@ -21,10 +40,14 @@ function Searchbar() {
           sx={{
             height: "53px",
           }}
+          onClick={handleSearchClick}
         >
           Search
         </Button>
       </div>
+
+      <ToastContainer />
+
     </div>
   );
 }
