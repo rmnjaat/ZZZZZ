@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ToastContainer , toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import "./Searchbar.css";
@@ -11,14 +11,16 @@ function Searchbar({ onSearchSubmit }) {
     setSearchValue(e.target.value);
   };
 
+  
   const handleSearchClick = () => {
-    if (searchValue.trim() === "") {
-      toast.warn("Enter Something to search" , {
-        position:'top-right'
-      })
-       // Notify App.js if the search is empty
+    const sanitizedValue = searchValue.replace(/\s+/g, " ").trim(); // Remove extra spaces
+
+    if (sanitizedValue === "") {
+      toast.warn("Enter something to search", {
+        position: "top-right",
+      });
     } else {
-      onSearchSubmit(searchValue); // Notify App.js With the search value
+      onSearchSubmit(sanitizedValue); // Notify App.js with the sanitized search value
     }
   };
 
@@ -30,12 +32,12 @@ function Searchbar({ onSearchSubmit }) {
           fullWidth
           label="Type here"
           id=""
-          variant="outlined" 
+          variant="outlined"
           margin="normal"
           onChange={handleInputChange}
         />
         <Button
-          variant="contained" 
+          variant="contained"
           size="large"
           sx={{
             height: "53px",
