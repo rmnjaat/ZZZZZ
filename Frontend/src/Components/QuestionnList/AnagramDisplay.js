@@ -2,11 +2,11 @@ import React from "react";
 import { Stack, List, ListItem, ListItemText, Box } from "@mui/material";
 
 const AnagramDisplay = ({ anagramType, blocks }) => {
-  const optionPrefix = ["a)", "b)", "c)", "d)", "e)", "f)"];
+  const optionPrefix = ["a)", "b)", "c)", "d)", "e)", "f)" , "g)" , "h)" , "i)" , "j)"];
 
   if (anagramType === "WORD") {
     return (
-      <Stack direction="row" spacing={2}>
+      <Stack direction="row" spacing={2} sx={{flexWrap:"wrap" , rowGap:"10px"}}>
         {blocks.map(([id, text, showInOption]) => (
           showInOption && (
             <Box key={id} sx={{ border: "1px solid #ccc", padding: 1, borderRadius: 1, textAlign: "center", minWidth: 40 }}>
