@@ -5,19 +5,24 @@ Welcome to the project! Follow the steps below to set up the backend, frontend, 
 ## Installation
 
 ### Backend Setup
-1. Navigate to the backend folder:
+
+1. install yarn 
+```bash
+ npm install -g yarn
+```
+2. Navigate to the backend folder:
    ```bash
    cd backend
    ```
-2. Install dependencies:
+3. Install dependencies:
    ```bash
    npm install
    ```
-3. Start the backend server:
+4. Start the backend server:
    ```bash
    npm 
    ```
-4. You will see:
+5. You will see:
     ```
     backend@1.0.0 start
     node index.js
